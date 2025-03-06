@@ -1,0 +1,54 @@
+version: '3'
+services:
+  yangoj-backend-gateway:
+    container_name: yangoj-backend-gateway
+    build:
+      context: ./yangoj-backend-gateway
+      dockerfile: Dockerfile
+    ports:
+      - "8101:8101"
+    networks:
+      - mynetwork
+
+  yangoj-backend-user-service:
+    container_name: yangoj-backend-user-service
+    build:
+      context: ./yangoj-backend-user-service
+      dockerfile: Dockerfile
+    ports:
+      - "8102:8102"
+    networks:
+      - mynetwork
+    depends_on:
+      - yangoj-backend-gateway
+
+  yangoj-backend-question-service:
+    container_name: yangoj-backend-question-service
+    build:
+      context: ./yangoj-backend-question-service
+      dockerfile: Dockerfile
+    ports:
+      - "8103:8103"
+    networks:
+      - mynetwork
+    depends_on:
+      - yangoj-backend-user-service
+      - yangoj-backend-gateway
+
+  yangoj-backend-judge-service:
+    container_name: yangoj-backend-judge-service
+    build:
+      context: ./yangoj-backend-judge-service
+      dockerfile: Dockerfile
+    ports:
+      - "8104:8104"
+    networks:
+      - mynetwork
+    depends_on:
+      - yangoj-backend-user-service
+      - yangoj-backend-question-service
+      - yangoj-backend-gateway
+
+# 网络，不定义的话就是默认网络
+networks:
+  mynetwork:

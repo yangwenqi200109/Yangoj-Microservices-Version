@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="yangoj-backend-question-service" />
+        <module name="yangoj-backend-service-client" />
+        <module name="yangoj-backend-model" />
+        <module name="yangoj-backend-common" />
+        <module name="yangoj-backend-gateway" />
+        <module name="yangoj-backend-user-service" />
+        <module name="yangoj-backend-judge-service" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="yang-backend-microservice" target="1.8" />
+      <module name="yuoj-backend-common" target="1.8" />
+      <module name="yuoj-backend-gateway" target="1.8" />
+      <module name="yuoj-backend-judge-service" target="1.8" />
+      <module name="yuoj-backend-model" target="1.8" />
+      <module name="yuoj-backend-question-service" target="1.8" />
+      <module name="yuoj-backend-service-client" target="1.8" />
+      <module name="yuoj-backend-user-service" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
